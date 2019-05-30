@@ -10,6 +10,42 @@ let jobTypes = {
 };
 
 // Your code here
+class CrewMember {
+  constructor(name, job, specialSkill){
+    this.name = name;
+    this.job = job;
+    this.specialSkill = specialSkill;
+    this.ship = null;
+  }
+
+  enterShip(mav){
+    this.ship = mav;
+    mav.crew.push(this);
+
+
+  }
+}
+
+
+class Ship {
+  constructor(name, type, ability){
+    this.name = name;
+    this.type = type;
+    this.ability = ability;
+    this.crew = [];
+  }
+
+missionStatement(a){
+  if(this.crew.length == 0 && CrewMember.ship == null)
+    return `Can't perform a mission yet.`
+  return this.ability;
+  
+}
+
+
+
+}
+
 
 //tests
 if (typeof describe === 'function'){
@@ -57,3 +93,5 @@ if (typeof describe === 'function'){
     });
   });
 }
+
+
