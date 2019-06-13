@@ -18,11 +18,12 @@ var letter = '';
 
 function getPrompt() {
     
-    rl.question('which letter?: ', (letter) => {
+    window.prompt('which letter?: ', (letter) => {
       
         hangman(letter);
         wrongLetter();
         console.log(solved);
+        // print solved
         checkForWin(arr, solved);
         if(wrong < 5){
             getPrompt();
